@@ -26,6 +26,7 @@ Rails.application.configure do
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = true
+  config.assets.compress = true
 
   # Compress JavaScripts and CSS.
   uglifier = Uglifier.new output: { comments: :none }
@@ -35,8 +36,6 @@ Rails.application.configure do
   # Asset digests allow you to set far-future HTTP expiration dates on all assets,
   # yet still be able to expire them through the digest params.
   #config.assets.digest = true
-
-  config.serve_static_assets = true
 
   config.static_cache_control = "public, max-age=31536000"
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
