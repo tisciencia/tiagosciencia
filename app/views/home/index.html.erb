@@ -174,7 +174,7 @@
 					<div class="stat">
 						<div class="stat-icon">
 							<h2>
-								<i class="fa fa-child hidden-xs"></i>
+								<i class="fa fa-child"></i>
 								<span class="timer" data-to="29"></span>
 							</h2>
 						</div>
@@ -186,7 +186,7 @@
 					<div class="stat">
 						<div class="stat-icon">
 							<h2>
-								<i class="fa fa-code hidden-xs"></i>
+								<i class="fa fa-code"></i>
 								<span class="timer" data-to="8"></span>+
 							</h2>
 						</div>
@@ -198,7 +198,7 @@
 					<div class="stat">
 						<div class="stat-icon">
 							<h2>
-								<i class="fa fa-coffee hidden-xs"></i>
+								<i class="fa fa-coffee"></i>
 								<span class="timer" data-to="999"></span>+
 							</h2>
 						</div>
@@ -402,7 +402,7 @@
 
 				<div class="col-md-6 col-sm-8 resume-item wow bounceInUp">
 					<h4>System Analyst</h4>
-					<ul>
+					<ul class="text-left">
 						<li>Development (back-end/front-end)</li>
 						<li>Create several enterprise components like authentication, data access, log, audit and mailer</li>
 						<li>Hosting components using Nuget Package Server</li>
@@ -424,7 +424,7 @@
 
 				<div class="col-md-6 col-md-offset-3 col-sm-8 resume-item wow bounceInUp">
 					<h4>Full Stack Web Developer</h4>
-					<ul>
+					<ul class="text-left">
 						<li>Develop a Fashion Social Network including concepts of Activity Stream, User Profiler, Groups, Brands Page, Followers, Virtual Closet, Likes and Shares of contents</li>
 						<li>Develop a crawler tool</li>
 						<li>Fetch feeds (rss/atom) from blogs</li>
@@ -469,7 +469,7 @@
 	<section id="clients" class="callout">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-3 hidden-xs wow bounceInLeft">
+				<div class="col-md-3 wow bounceInLeft">
 					<h3>Some interests</h3>
 				</div>
 
@@ -579,30 +579,29 @@
 						<li><i class="fa fa-fw fa-globe"></i><a href="">http://tiagosciencia.com</a></li>
 					</ul>
 				</div>
-
 				<div class="col-md-6 wow bounceInRight">
-					<form id="contact-form" role="form">
-						<div class="form-group">
-							<label class="sr-only" for="c_name">Name</label>
-							<input type="text" id="c_name" class="form-control" name="c_name" placeholder="Name">
-						</div>
+					<%= form_for(@contact) do |f| %>
+					<%= render 'shared/errors', object: @contact %>
+					<div class="form-group">
+						<%= f.label :name %><br>
+						<%= f.text_field :name, class: "form-control", placeholder: "Name" %>
+					</div>
 
-						<div class="form-group">
-							<label class="sr-only" for="c_email">Email address</label>
-							<input type="email" id="c_email" class="form-control" name="c_email" placeholder="E-mail">
-						</div>
+					<div class="form-group">
+						<%= f.label :email %><br>
+						<%= f.text_field :email, class: "form-control", placeholder: "E-mail" %>
+					</div>
 
-						<div class="form-group">
-							<textarea class="form-control" id="c_message" name="c_message" rows="7" placeholder="Your message"></textarea>
-						</div>
+					<div class="form-group">
+						<%= f.label :message %><br>
+						<%= f.text_area :message, class: "form-control", placeholder: "Your message" %>
+					</div>
 
-						<button type="submit" class="btn btn-custom-1">
-							<i class="fa fa-bullhorn icon-before"></i> Send it
-						</button>
-					</form>
-					<div class="ajax-response"></div>
+					<button type="submit" class="btn btn-custom-1">
+						<i class="fa fa-bullhorn icon-before"></i> Send it
+					</button>
+					<% end %>
 				</div>
-
 			</div><!-- .row -->
 		</div><!-- .container -->
 	</section>
