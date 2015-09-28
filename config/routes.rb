@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  root 'home#index'
+	constraints subdomain: 'www' do
+		get ':any', to: redirect(subdomain: nil, path: '/%{any}'), any: /.*/
+	end
 
-    resources :contacts, only: [:create]
+	root 'home#index'
+
+	resources :contacts, only: [:create]
 end
