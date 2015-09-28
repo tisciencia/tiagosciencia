@@ -16,4 +16,5 @@
 !/log/.keep
 /tmp
 
-/config/application.rb
+# Ignore application configuration
+/config/application.yml

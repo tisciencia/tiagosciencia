@@ -30,8 +30,8 @@ module Tiagosciencia
         :address              => "smtp.gmail.com",
         :port                 => 587,
         :domain               => 'gmail.com',
-        :user_name            => 'tisciencia@gmail.com',
-        :password             => '######',
+        :user_name            => ENV["mail_username"],
+        :password             => ENV["mail_password"],
         :authentication       => 'plain',
         :enable_starttls_auto => true
     }
