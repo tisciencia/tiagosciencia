@@ -31,7 +31,7 @@ module Tiagosciencia
         :port                 => 587,
         :domain               => 'gmail.com',
         :user_name            => 'tisciencia@gmail.com',
-        :password             => '#!@Caco85#',
+        :password             => '######',
         :authentication       => 'plain',
         :enable_starttls_auto => true
     }
